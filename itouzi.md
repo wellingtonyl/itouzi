@@ -135,10 +135,12 @@ head(results)
 定期自动抓取
 ------------
 
-债券市场的情况是动态变化的。因此需要定时获取数据，这里我用到了.bat文件和Windows的计划任务。
+债券市场的情况是动态变化的，因此需要定时获取数据。这里我用到了.bat文件和Windows的计划任务。
 
-R的脚本是可以通过命令行命令来执行的。首先需要将R的主程序所在的bin文件夹的路径加入到环境变量中。然后可以用如下命令执行R脚本。更多的命令和参数详见W.N.Venables和D.M.Smith的"An Introduction to R——Notes on R: A Programming Enviroment for Data Analysis and Graphics" version 3.3.2 (2016-10-31) Appendix B。
+R的脚本是可以通过命令行命令来执行的。首先需要将R的主程序所在的bin文件夹的路径加入到环境变量中。然后可以用如下命令执行R脚本（去掉\#）。更多的命令和参数详见W.N.Venables和D.M.Smith的"An Introduction to R——Notes on R: A Programming Enviroment for Data Analysis and Graphics" version 3.3.2 (2016-10-31) Appendix B。
 
-r CMD BATCH --no-restore --no-save C:.R
+``` r
+#r CMD BATCH --no-restore --no-save C:\folder\name.R
+```
 
 将上述命令写入.bat文件，并加入计划任务中，设定每小时执行一次，获取的数据写入.csv文件中或导入数据库，即可定时获取爱投资债券市场的信息。
